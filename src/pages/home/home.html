@@ -1,14 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Contactos
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+      <ion-item *ngFor="let c of Contactos" (click)="verContacto(c)">
+       <ion-avatar item-start>
+         <img src="../assets/avatar.png">
+       </ion-avatar> 
+       <ion-col>
+         <ion-row>
+           <h1>{{c.nombre}}</h1>
+         </ion-row>
+          <ion-row>
+            <h1>{{c.telefono}}</h1>
+          </ion-row>
+       </ion-col>  
+      </ion-item>
+  </ion-list>
+
+    
+  
+<button ion-button block (click)="clickAgregar()"> Agregar Contacto </button>
 </ion-content>
